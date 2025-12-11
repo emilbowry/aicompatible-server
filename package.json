@@ -1,0 +1,47 @@
+{
+  "author": "",
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "@react-oauth/google": "^0.12.2",
+    "@types/stripe": "^8.0.416",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongodb": "^7.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "stripe": "^19.2.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.2",
+    "@types/node": "^20.14.9",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "dotenv-cli": "^11.0.0",
+    "nodemon": "^3.1.4",
+    "prisma": "^6.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "imports": {
+    "#prisma/client": "./dist/generated/prisma/index.js",
+    "#bw1": "./assets/bw1.jpg"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "main": "server.js",
+  "name": "server",
+  "scripts": {
+    "build": "rm -rf dist && tsc && cp -r src/generated dist/ && cp -r src/config/config_data/assets dist/config/config_data/",
+    "dev": "nodemon --exec node --loader ts-node/esm src/server.ts",
+    "prisma": "dotenv -- npx prisma",
+    "start": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
